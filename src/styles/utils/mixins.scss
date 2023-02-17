@@ -1,0 +1,69 @@
+@mixin on-tablet {
+	@media (min-width: 580px) {
+		@content;
+	}
+}
+
+@mixin on-desktop {
+	@media (min-width: 1023px) {
+		@content;
+	}
+}
+
+@mixin on-desktop-l {
+	@media (min-width: 1439px) {
+		@content;
+	}
+}
+
+@mixin flex-centered-centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin flex-column-centered-centered {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin absolute-centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin absolute-centered-x {
+	position: absolute;
+	left: 50%;
+	width: 100%;
+	transform: translateX(-50%);
+}
+
+@mixin absolute-centered-y {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin fixed-centered {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin fixed-centered-x {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin fixed-centered-y {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+}

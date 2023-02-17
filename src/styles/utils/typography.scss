@@ -1,0 +1,49 @@
+@use "./variables.scss" as V;
+
+@mixin h-xl {
+	font-family: V.$f-bold;
+	font-size: 8vmin;
+	line-height: 9vmin;
+}
+
+@mixin h-l {
+	font-family: V.$f-semi-bold;
+	font-size: 5vmin;
+	line-height: 6vmin;
+}
+
+@mixin h-m {
+	font-family: V.$f-semi-bold;
+	font-size: 4vmin;
+	line-height: 5vmin;
+}
+
+@mixin h-s {
+	font-family: V.$f-semi-bold;
+	font-size: 3vmin;
+	line-height: 4vmin;
+}
+
+@mixin h-xs {
+	font-family: V.$f-semi-bold;
+	font-size: 2vmin;
+	line-height: 3vmin;
+}
+
+@mixin body-l {
+	font-family: V.$f-regular;
+	font-size: 5vmin;
+	line-height: 6vmin;
+}
+
+@mixin body-m {
+	font-family: V.$f-regular;
+	font-size: 3vmin;
+	line-height: 4vmin;
+}
+
+@mixin body-s {
+	font-family: V.$f-light;
+	font-size: 2vmin;
+	line-height: 2.5vmin;
+}

@@ -1,0 +1,16 @@
+.home {
+	width: 100vw;
+	height: 100vh;
+	background-color: V.$c-black;
+
+	&--content {
+		@include M.flex-centered-centered;
+
+		width: 100%;
+		height: 100%;
+
+		.title {
+			@include T.h-xl;
+		}
+	}
+}

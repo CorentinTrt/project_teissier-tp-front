@@ -1,0 +1,51 @@
+@use "./utils/variables.scss" as V;
+
+@font-face {
+	font-family: "Montserrat Light";
+	font-style: normal;
+	font-weight: 200;
+	font-display: swap;
+	src: url("/fonts/MontserratAlternates-ExtraLight.ttf");
+}
+
+@font-face {
+	font-family: "Montserrat Regular";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/fonts/MontserratAlternates-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Montserrat Semi Bold";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("/fonts/MontserratAlternates-SemiBold.ttf");
+}
+
+@font-face {
+	font-family: "Montserrat Bold";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/fonts/MontserratSubrayada-Bold.ttf");
+}
+
+p,
+a,
+li,
+label {
+	color: V.$c-white;
+	font-family: V.$f-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: V.$c-white;
+	font-family: V.$f-semi-bold;
+}

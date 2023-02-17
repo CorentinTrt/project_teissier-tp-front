@@ -1,0 +1,17 @@
+version: '3.9'
+
+name: dev_teissier_tp_frontend
+
+services:
+  frontend-standalone:
+    platform: linux/x86_64
+    container_name: dev.nextjs.teissier_tp
+    image: dev.nextjs.teissier_tp
+    ports:
+      - 3000:3000
+    build:
+      context: ../
+      dockerfile: build/dev.Dockerfile
+    volumes:
+      - ../src:/app/src
+      - ../public:/app/public

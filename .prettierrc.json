@@ -1,0 +1,20 @@
+{
+	"useTabs": true,
+	"semi": true,
+	"singleQuote": true,
+	"jsxSingleQuote": true,
+	"overrides": [
+		{
+			"files": ["*.html", "*.jsx", "*.js", "*.json", "*.tsx", "*.ts"],
+			"options": {
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": ["*.scss"],
+			"options": {
+				"singleQuote": false
+			}
+		}
+	]
+}
