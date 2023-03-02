@@ -1,43 +1,30 @@
 @use "./utils/variables.scss" as V;
+@use "./utils/typography.scss" as T;
 
 @font-face {
-	font-family: "Montserrat Light";
-	font-style: normal;
-	font-weight: 200;
-	font-display: swap;
-	src: url("/fonts/MontserratAlternates-ExtraLight.ttf");
-}
-
-@font-face {
-	font-family: "Montserrat Regular";
+	font-family: "Noto Sans";
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url("/fonts/MontserratAlternates-Regular.ttf");
+	src: url("/fonts/NotoSans-Regular.ttf");
 }
 
 @font-face {
-	font-family: "Montserrat Semi Bold";
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: url("/fonts/MontserratAlternates-SemiBold.ttf");
-}
-
-@font-face {
-	font-family: "Montserrat Bold";
+	font-family: "Noto Sans";
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url("/fonts/MontserratSubrayada-Bold.ttf");
+	src: url("/fonts/NotoSans-Bold.ttf");
 }
 
 p,
 a,
 li,
 label {
-	color: V.$c-white;
-	font-family: V.$f-light;
+	@include T.body-m;
+
+	color: V.$c-black;
+	font-family: V.$f-regular;
 }
 
 h1,
@@ -46,6 +33,17 @@ h3,
 h4,
 h5,
 h6 {
-	color: V.$c-white;
-	font-family: V.$f-semi-bold;
+	color: V.$c-black;
+}
+
+h1 {
+	@include T.h-l;
+}
+
+h2 {
+	@include T.h-m;
+}
+
+h3 {
+	@include T.h-s;
 }
