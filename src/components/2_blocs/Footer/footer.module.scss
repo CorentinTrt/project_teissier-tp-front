@@ -1,0 +1,73 @@
+.footer {
+	@include M.flex-column-centered-centered;
+
+	flex-direction: column-reverse;
+
+	@include M.on-desktop {
+		@include M.flex-centered-centered;
+	}
+
+	.left {
+		@include M.flex-column-centered-centered;
+
+		align-items: flex-start;
+		width: 100%;
+		height: 250px;
+		padding: 0 20px 0 40px;
+		gap: 12px;
+		background-color: V.$c-grey-dark;
+
+		@include M.on-desktop {
+			width: 60%;
+			height: 200px;
+			padding: 34px 20vmin 34px 120px;
+		}
+
+		p {
+			color: V.$c-white;
+		}
+
+		.location {
+			@include M.flex-centered-centered;
+
+			gap: 10px;
+		}
+	}
+
+	.right {
+		@include M.flex-column-centered-centered;
+
+		align-items: flex-start;
+		width: 100%;
+		height: 162px;
+		padding: 50px 20px 40px;
+		background-color: V.$c-blue;
+
+		@include M.on-desktop {
+			width: 40%;
+			height: 200px;
+		}
+
+		h3 {
+			margin-bottom: 16px;
+			color: V.$c-white;
+		}
+
+		p {
+			color: V.$c-white;
+		}
+
+		.numbers {
+			@include M.flex-centered-centered;
+
+			margin-bottom: 8px;
+			gap: 10px;
+		}
+
+		.email-adress {
+			@include M.flex-centered-centered;
+
+			gap: 10px;
+		}
+	}
+}
