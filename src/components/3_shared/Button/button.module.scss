@@ -1,0 +1,24 @@
+.button {
+	width: max-content;
+	height: max-content;
+	transition: background-color 0.3s ease-in;
+	background-color: V.$c-blue;
+	cursor: pointer;
+	user-select: none;
+
+	&:hover {
+		transition: background-color 0.3s ease-in;
+		background-color: V.$c-blue-strong;
+	}
+
+	.label {
+		@include T.body-l;
+
+		padding: 8px 16px;
+		color: V.$c-white;
+
+		&.small {
+			padding: 4px 16px;
+		}
+	}
+}
