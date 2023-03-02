@@ -3,7 +3,7 @@ version: '3.9'
 name: dev_teissier_tp_frontend
 
 services:
-  frontend-standalone:
+  next-app:
     platform: linux/x86_64
     container_name: dev.nextjs.teissier_tp
     image: dev.nextjs.teissier_tp
@@ -11,7 +11,7 @@ services:
       - 3000:3000
     build:
       context: ../
-      dockerfile: build/dev.Dockerfile
+      dockerfile: docker/dev.Dockerfile
     volumes:
       - ../src:/app/src
       - ../public:/app/public
