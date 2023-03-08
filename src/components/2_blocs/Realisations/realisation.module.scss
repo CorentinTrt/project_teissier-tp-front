@@ -1,0 +1,43 @@
+.realisations {
+	width: 100%;
+	padding: 32px 20px;
+	background-color: V.$c-grey-light;
+
+	@include M.on-desktop {
+		padding: 0 80px 80px 132px;
+	}
+
+	.real-list {
+		display: none;
+
+		@include M.on-desktop {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 24px;
+
+			img {
+				width: 100%;
+				height: 300px;
+				object-fit: cover;
+			}
+		}
+
+		&--mobile {
+			height: 350px;
+
+			@include M.on-desktop {
+				display: none;
+			}
+
+			img {
+				width: 100%;
+				height: 350px;
+				object-fit: cover;
+			}
+
+			.swiper-pagination {
+				margin-top: 50px;
+			}
+		}
+	}
+}
