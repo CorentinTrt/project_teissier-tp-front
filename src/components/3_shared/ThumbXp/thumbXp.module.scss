@@ -1,0 +1,20 @@
+.thumb-xp {
+	width: 350px;
+	height: 100px;
+	border-radius: 8px;
+	background-color: V.$c-white;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 8%);
+
+	@include M.on-desktop {
+		width: 280px;
+		height: 128px;
+	}
+
+	.content {
+		@include M.flex-centered-centered;
+
+		gap: 18px;
+		height: 100%;
+		padding-inline: 40px;
+	}
+}
