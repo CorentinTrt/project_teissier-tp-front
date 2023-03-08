@@ -30,6 +30,9 @@ type StrapiPayload = {
 			uploads: {
 				data: UploadFromStrapi[];
 			};
+			realisations: {
+				data: UploadFromStrapi[];
+			};
 		};
 	};
 };
