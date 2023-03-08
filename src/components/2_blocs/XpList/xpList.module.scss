@@ -1,22 +1,41 @@
 .xp-list {
-	@include M.flex-centered-centered;
+	@include M.flex-column-centered-centered;
 
-	justify-content: space-between;
 	padding: 32px 20px;
 	background-color: V.$c-blue-light;
 
 	@include M.on-desktop {
+		@include M.flex-centered-centered;
+
+		justify-content: space-between;
 		height: 410px;
 		padding: 0 80px 0 132px;
 	}
 
 	.left {
 		@include M.on-desktop {
-			width: 30%;
+			width: 40%;
+			margin-right: 3vmin;
 		}
 
 		.text-xp {
 			margin-bottom: 30px;
+		}
+	}
+
+	.right {
+		@include M.flex-column-centered-centered;
+
+		margin-top: 26px;
+		padding: 0;
+		gap: 12px;
+
+		@include M.on-desktop {
+			display: grid;
+			gap: 12px;
+			grid-template-columns: 1fr 1fr;
+			margin: 0;
+			padding-right: 8vmin;
 		}
 	}
 }

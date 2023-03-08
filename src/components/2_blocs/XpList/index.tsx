@@ -1,5 +1,7 @@
-import Button from '@shared/Button/Button';
 import s from './xpList.module.scss';
+
+import Button from '@shared/Button/Button';
+import ThumbXp from '@shared/ThumbXp';
 
 type Props = {
 	strings: { [key: string]: string };
@@ -7,6 +9,13 @@ type Props = {
 
 const XpList = (props: Props) => {
 	const { strings } = props;
+
+	const xpList = [
+		{ label: 'Terrassement', iconSrc: 'pelle.png' },
+		{ label: 'Assainissement', iconSrc: 'fosse.png' },
+		{ label: 'Aménagement extérieur', iconSrc: 'amenagement.png' },
+		{ label: 'Travaux public', iconSrc: 'tp.png' },
+	];
 
 	return (
 		<div className={s['xp-list']}>
@@ -18,7 +27,11 @@ const XpList = (props: Props) => {
 				<Button size='big' label='Contactez-nous' />
 			</div>
 
-			<div className={s['right']}></div>
+			<div className={s['right']}>
+				{xpList.map((e, i) => (
+					<ThumbXp {...e} key={`thumn${i}`} />
+				))}
+			</div>
 		</div>
 	);
 };
