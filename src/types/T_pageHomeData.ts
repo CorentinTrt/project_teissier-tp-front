@@ -4,6 +4,10 @@ interface Metadata {
 }
 
 interface Strings {
+  heading_1: string,
+  heading_2: string,
+  heading_3: string;
+  textXp: string;
 	[key: string]: string;
 }
 
