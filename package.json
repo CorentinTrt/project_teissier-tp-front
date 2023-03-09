@@ -17,8 +17,8 @@
 		"lint": "next lint",
 		"lint::scss": "stylelint \"**/*.scss\"",
 		"///": "-- DOCKER --",
-		"docker-dev": "docker-compose -f docker/dev.docker-compose.yml up --build --force-recreate",
-		"docker-prod": "docker-compose -f docker/prod.docker-compose.yml up --build --force-recreate",
+		"docker-dev": "docker compose -f docker/dev.docker-compose.yml up --build --force-recreate",
+		"docker-prod": "docker compose -f docker/prod.docker-compose.yml up --build --force-recreate",
 		"////": "-- POSTINSTALL --",
 		"postinstall": "husky install"
 	},
