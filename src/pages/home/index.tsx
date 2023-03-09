@@ -1,9 +1,10 @@
 import s from './home.module.scss';
 
-import { Strings, Upload } from '@c_types/T_pageData';
 import Catch from '@blocs/Catch';
 import XpList from '@blocs/XpList';
 import Realisations from '@blocs/Realisations';
+
+import { Strings, Upload } from '@c_types/T_pageHomeData';
 
 type Props = {
 	strings: Strings;
@@ -11,9 +12,14 @@ type Props = {
 	realisations: Upload[];
 };
 
+const defaultProps: Props = {
+	strings: { heading_1: '', heading_2: '', heading_3: '', textXp: '' },
+	uploads: [{ id: '', url: '', alternativeText: '', name: '' }],
+	realisations: [],
+};
+
 const HomePage = (props: Props) => {
 	const { strings, uploads, realisations } = props;
-	console.log(realisations);
 
 	return (
 		<div className={s['home']}>
@@ -27,3 +33,5 @@ const HomePage = (props: Props) => {
 };
 
 export default HomePage;
+
+HomePage.defaultProps = defaultProps;
