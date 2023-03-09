@@ -3,7 +3,7 @@ import s from './realisation.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
 
-import { Upload } from '@c_types/T_pageData';
+import { Upload } from '@c_types/T_pageHomeData';
 
 type Props = {
 	strings: { [key: string]: string };

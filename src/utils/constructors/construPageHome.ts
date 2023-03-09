@@ -4,7 +4,7 @@ import {
 	Strings,
 	Upload,
 	UploadFromStrapi,
-} from '@c_types/T_pageData';
+} from '@c_types/T_pageHomeData';
 
 type PageData = {
 	metadata: Metadata;

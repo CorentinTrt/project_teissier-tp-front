@@ -3,7 +3,7 @@ import Metas from '@sections/Metas';
 import Header from '@blocs/Header';
 import Footer from '@blocs/Footer';
 
-import { Metadata, Strings, Upload } from '@c_types/T_pageData';
+import { Metadata, Strings, Upload } from '@c_types/T_pageHomeData';
 import { FooterData } from '@c_types/T_footerData';
 
 import construPageHome from '@utils/constructors/construPageHome';
