@@ -40,12 +40,13 @@
 		align-items: flex-start;
 		width: 100%;
 		height: 162px;
-		padding: 50px 20px 40px;
+		padding: 0 20px 0 40px;
 		background-color: V.$c-blue;
 
 		@include M.on-desktop {
 			width: 40%;
 			height: 200px;
+			padding: 50px 20px 50px 60px;
 		}
 
 		h3 {
