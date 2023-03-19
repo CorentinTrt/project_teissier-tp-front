@@ -9,6 +9,7 @@ services:
     image: prod.nextjs.starter-next-js
     ports:
       - 3000:3000
+      - 80:80
     build:
       context: ../
       dockerfile: docker/prod.Dockerfile
