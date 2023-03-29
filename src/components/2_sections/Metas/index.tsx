@@ -5,6 +5,11 @@ type Props = {
 	description: string;
 };
 
+const defaultProps: Props = {
+	title: 'Teissier TP',
+	description: 'Terrassement à Cavaillon',
+};
+
 const Metas = (props: Props) => {
 	const { title, description } = props;
 
@@ -17,3 +22,5 @@ const Metas = (props: Props) => {
 };
 
 export default Metas;
+
+Metas.defaultProps = defaultProps;
