@@ -7,6 +7,11 @@ type Props = {
 	contact: Contact;
 };
 
+const defaultProps: Props = {
+	details: { shotText: 'Teissier TP', location: 'Cavaillon' },
+	contact: { cellNumber: '', homeNumber: '', emailAdress: '' },
+};
+
 const Footer = (props: Props) => {
 	const { details, contact } = props;
 	const { shotText, location } = details;
@@ -42,3 +47,5 @@ const Footer = (props: Props) => {
 };
 
 export default Footer;
+
+Footer.defaultProps = defaultProps;
