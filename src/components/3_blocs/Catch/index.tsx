@@ -2,7 +2,7 @@ import s from './catch.module.scss';
 
 import Button from '@shared/Button/Button';
 
-import { Upload } from '@c_types/T_pageHomeData';
+import { Upload } from '@c_types/T_generics';
 
 type Props = {
 	strings: { [key: string]: string };
