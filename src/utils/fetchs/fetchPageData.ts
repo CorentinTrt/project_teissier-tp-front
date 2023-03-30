@@ -1,4 +1,4 @@
-type Page = 'home' | 'realisations';
+type Page = 'home' | 'realisation';
 
 const strapiHost = process.env.STRAPI_HOST;
 const strapiPort = process.env.STRAPI_PORT;
