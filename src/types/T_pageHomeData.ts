@@ -1,7 +1,4 @@
-interface Metadata {
-	title: string;
-	description: string;
-}
+import type { Metadata, Upload, UploadFromStrapi } from '@c_types/T_generics';
 
 interface Strings {
 	heading_1: string;
@@ -9,21 +6,6 @@ interface Strings {
 	heading_3: string;
 	textXp: string;
 	[key: string]: string;
-}
-
-interface Upload {
-	id: string;
-	name: string;
-	alternativeText: string;
-	url: string;
-}
-interface UploadFromStrapi {
-	id: string;
-	attributes: {
-		name: string;
-		alternativeText: string;
-		url: string;
-	};
 }
 
 type StrapiPayload = {
@@ -41,4 +23,11 @@ type StrapiPayload = {
 	};
 };
 
-export type { StrapiPayload, Metadata, Strings, Upload, UploadFromStrapi };
+type PageData = {
+	metadata: Metadata;
+	strings: Strings;
+	uploads: Upload[];
+	realisations: Upload[];
+};
+
+export type { StrapiPayload, Strings, PageData };
