@@ -1,17 +1,6 @@
-import {
-	StrapiPayload,
-	Metadata,
-	Strings,
-	Upload,
-	UploadFromStrapi,
-} from '@c_types/T_pageHomeData';
+import { PageData, StrapiPayload, Strings } from '@c_types/T_pageHomeData';
 
-type PageData = {
-	metadata: Metadata;
-	strings: Strings;
-	uploads: Upload[];
-	realisations: Upload[];
-};
+import { Upload, UploadFromStrapi } from '@c_types/T_generics';
 
 const strapiHost = process.env.STRAPI_HOST;
 const strapiPort = process.env.STRAPI_PORT;
