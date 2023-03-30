@@ -5,18 +5,24 @@ const strapiHost = process.env.STRAPI_HOST;
 const strapiPort = process.env.STRAPI_PORT;
 
 function formateUploadsSrc(upload: UploadFromStrapi): Upload {
-	if (upload.attributes.alternativeText === '') {
-		console.error(
-			`Error on upload ID=${upload.id} on "alternativeText" field: Missing field`
-		);
+	const formatedUpload: Upload = {
+		id: '',
+		name: '',
+		alternativeText: '',
+		url: '',
+	};
+
+	if (upload?.attributes?.url) {
+		formatedUpload.url = `http://${strapiHost}:${strapiPort}${upload?.attributes?.url}`;
+	}
+	if (upload?.attributes?.name) {
+		formatedUpload.name = upload?.attributes?.name;
+	}
+	if (upload?.attributes?.alternativeText) {
+		formatedUpload.alternativeText = upload?.attributes?.alternativeText;
 	}
 
-	return {
-		id: upload.id,
-		name: upload.attributes?.name,
-		alternativeText: upload.attributes?.alternativeText,
-		url: `http://${strapiHost}:${strapiPort}${upload.attributes?.url}`,
-	};
+	return formatedUpload;
 }
 
 export default function construRealisation(
@@ -41,7 +47,7 @@ export default function construRealisation(
 
 	return {
 		pid: 0,
-		layout: 1,
+		layout: 0,
 		name: '',
 		typeText: '',
 		technicText: '',

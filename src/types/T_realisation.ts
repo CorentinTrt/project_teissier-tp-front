@@ -5,7 +5,7 @@ import type { Upload, UploadFromStrapi } from '@c_types/T_generics';
 // 2 > 3 images > big at left
 // 3 > 3 images > big at the bottom
 // 4 > 4 images > same size, grid
-type Layout = 1 | 2 | 3 | 4;
+type Layout = 1 | 2 | 3 | 4 | 0;
 
 type Realisation = {
 	pid: number;

@@ -6,11 +6,11 @@ import { Upload } from '@c_types/T_generics';
 type Props = { layout: Layout; images: Upload[] };
 
 type LayoutData = {
-	classSuffix: 'un' | 'deux' | 'trois' | 'quatre';
-	imgCount: 1 | 3 | 4;
+	classSuffix: 'un' | 'deux' | 'trois' | 'quatre' | '';
+	imgCount: 1 | 3 | 4 | 0;
 };
 
-const defaultProps: Props = { layout: 1, images: [] };
+const defaultProps: Props = { layout: 0, images: [] };
 
 const RealLayout = (props: Props) => {
 	const { layout, images } = props;
@@ -24,7 +24,7 @@ const RealLayout = (props: Props) => {
 			? { classSuffix: 'trois', imgCount: 3 }
 			: layout === 4
 			? { classSuffix: 'quatre', imgCount: 4 }
-			: { classSuffix: 'un', imgCount: 1 };
+			: { classSuffix: '', imgCount: 0 };
 
 	const imgs: Upload[] = [];
 
