@@ -1,10 +1,11 @@
-import HomePage from './home';
+import HomePage from '@pages/Home';
 import Metas from '@sections/Metas';
 import Header from '@blocs/Header';
 import Footer from '@blocs/Footer';
 
-import { Metadata, Strings, Upload } from '@c_types/T_pageHomeData';
+import { Strings } from '@c_types/T_pageHomeData';
 import { FooterData } from '@c_types/T_footerData';
+import { Metadata, Upload } from '@c_types/T_generics';
 
 import construPageHome from '@utils/constructors/construPageHome';
 import construFooterData from '@utils/constructors/construFooterData';
@@ -41,13 +42,13 @@ export default function Home(props: Props) {
 }
 
 export async function getStaticProps() {
-	const [data, dataFooter, dataContact] = await Promise.all([
+	const [page, footer, contact] = await Promise.all([
 		fetchPageData('home'),
 		fetchData('footer'),
 		fetchData('contact'),
 	]);
-	const pageData = construPageHome(data);
-	const footerData = construFooterData(dataFooter, dataContact);
+	const pageData = construPageHome(page);
+	const footerData = construFooterData(footer, contact);
 
 	return {
 		props: {
