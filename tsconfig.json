@@ -13,7 +13,7 @@
 		"resolveJsonModule": true,
 		"baseUrl": ".",
 		"paths": {
-      "@pages/*":["src/components/1_pages/*"],
+			"@pages/*": ["src/components/1_pages/*"],
 			"@sections/*": ["src/components/2_sections/*"],
 			"@blocs/*": ["src/components/3_blocs/*"],
 			"@shared/*": ["src/components/4_shared/*"],
