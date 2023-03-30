@@ -1,4 +1,4 @@
-import s from './ActiveLink.module.scss';
+import s from './activeLink.module.scss';
 
 import { useRouter } from 'next/router';
 
