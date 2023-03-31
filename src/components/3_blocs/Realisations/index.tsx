@@ -5,11 +5,12 @@ import { Pagination } from 'swiper';
 
 import useDetectLayout from '@utils/useDetectLayout';
 
-import { Upload } from '@c_types/T_generics';
+import { Realisation } from '@c_types/T_realisation';
+import ActiveLink from '@shared/ActiveLink';
 
 type Props = {
 	strings: { [key: string]: string };
-	realList: Upload[];
+	realList: Realisation[];
 };
 
 const Realisations = (props: Props) => {
@@ -22,7 +23,16 @@ const Realisations = (props: Props) => {
 			<h1>{strings.heading_3}</h1>
 			<div className={s['real-list']}>
 				{realList.map((e, i) => (
-					<img src={e.url} alt={e.alternativeText} key={`${e.name}_${i}`} />
+					<ActiveLink href={`/realisations/${e.pid}`} key={`${e.name}_${i}`}>
+						<img
+							src={e.images.length > 0 ? e.images[0].url : ''}
+							alt={
+								e.images.length > 0
+									? e.images[0].alternativeText
+									: 'Missing image'
+							}
+						/>
+					</ActiveLink>
 				))}
 			</div>
 
@@ -39,7 +49,19 @@ const Realisations = (props: Props) => {
 					>
 						{realList.map((e, i) => (
 							<SwiperSlide key={`swipe${i}`}>
-								<img src={e.url} alt={e.alternativeText} />
+								<ActiveLink
+									href={`/realisations/${e.pid}`}
+									key={`${e.name}_${i}`}
+								>
+									<img
+										src={e.images.length > 0 ? e.images[0].url : ''}
+										alt={
+											e.images.length > 0
+												? e.images[0].alternativeText
+												: 'Missing image'
+										}
+									/>
+								</ActiveLink>
 							</SwiperSlide>
 						))}
 					</Swiper>
