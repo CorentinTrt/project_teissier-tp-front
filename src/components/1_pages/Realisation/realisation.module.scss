@@ -5,6 +5,10 @@ $cross-size: 30%;
 	padding-inline: 20px;
 	background-color: V.$c-blue-light;
 
+	@include M.on-desktop {
+		padding: 50px 170px;
+	}
+
 	.header {
 		@include M.flex-centered-centered;
 
