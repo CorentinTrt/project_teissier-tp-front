@@ -11,8 +11,8 @@ const Header = () => {
 			</ActiveLink>
 
 			<div className={s['right']}>
-				<ActiveLink href={'/expertise'}>{'Expertise'}</ActiveLink>
-				<ActiveLink href={'/realisations/1'}>{'Réalisations'}</ActiveLink>
+				<a href={'#expertise'}>{'Expertise'}</a>
+				<a href={'#realisation'}>{'Réalisations'}</a>
 				<Button size='big' label='Contactez-nous' />
 			</div>
 		</div>

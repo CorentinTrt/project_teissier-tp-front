@@ -18,7 +18,7 @@ const XpList = (props: Props) => {
 	];
 
 	return (
-		<div className={s['xp-list']}>
+		<div id='expertise' className={s['xp-list']}>
 			<div className={s['left']}>
 				<h1>{strings.heading_2}</h1>
 
