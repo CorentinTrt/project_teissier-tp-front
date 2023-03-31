@@ -24,14 +24,17 @@ const Realisations = (props: Props) => {
 			<div className={s['real-list']}>
 				{realList.map((e, i) => (
 					<ActiveLink href={`/realisations/${e.pid}`} key={`${e.name}_${i}`}>
-						<img
-							src={e.images.length > 0 ? e.images[0].url : ''}
-							alt={
-								e.images.length > 0
-									? e.images[0].alternativeText
-									: 'Missing image'
-							}
-						/>
+						<div className={s['item']}>
+							<img
+								src={e.images.length > 0 ? e.images[0].url : ''}
+								alt={
+									e.images.length > 0
+										? e.images[0].alternativeText
+										: 'Missing image'
+								}
+							/>
+							<div className={s['name']}>{e.name}</div>
+						</div>
 					</ActiveLink>
 				))}
 			</div>
@@ -61,6 +64,7 @@ const Realisations = (props: Props) => {
 												: 'Missing image'
 										}
 									/>
+									<div className={s['name']}>{e.name}</div>
 								</ActiveLink>
 							</SwiperSlide>
 						))}
