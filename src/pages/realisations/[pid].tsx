@@ -1,12 +1,10 @@
 import RealisationPage from '@pages/Realisation';
 import Metas from '@sections/Metas';
 
-import fetchData from '@utils/fetchs/fetchData';
 import fetechRealisation from '@utils/fetchs/fetchRealisation';
 import fetchPageData from '@utils/fetchs/fetchPageData';
 import construPageRealisations from '@utils/constructors/construPageRealisations';
 import construRealisation from '@utils/constructors/construRealisation';
-import construFooterData from '@utils/constructors/construFooterData';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
@@ -57,7 +55,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 		]);
 
 		const pageData = construPageRealisations(page);
-		const realisationData = construRealisation(realisation);
+		const realisationData = construRealisation(
+			realisation?.data?.attributes?.content[0]
+		);
 
 		return {
 			props: {
