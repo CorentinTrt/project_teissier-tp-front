@@ -28,19 +28,18 @@ function formateUploadsSrc(upload: UploadFromStrapi): Upload {
 export default function construRealisation(
 	payload: StrapiPayload
 ): Realisation {
-	const data = payload?.data?.attributes?.content[0];
 	let formatedImages: Upload[] = [];
 
-	const uploads = payload?.data?.attributes?.content[0].images?.data;
+	const uploads = payload?.images?.data;
 	if (uploads && Array.isArray(uploads)) {
 		formatedImages = uploads.map((e: UploadFromStrapi) => formateUploadsSrc(e));
 
 		return {
-			pid: data.pid,
-			name: data.name,
-			typeText: data.typeText,
-			technicText: data.technicText,
-			layout: data.layout,
+			pid: payload.pid,
+			name: payload.name,
+			typeText: payload.typeText,
+			technicText: payload.technicText,
+			layout: payload.layout,
 			images: formatedImages,
 		};
 	}

@@ -6,17 +6,20 @@ import Footer from '@blocs/Footer';
 import { Strings } from '@c_types/T_pageHomeData';
 import { FooterData } from '@c_types/T_footerData';
 import { Metadata, Upload } from '@c_types/T_generics';
+import { Realisation } from '@c_types/T_realisation';
 
 import construPageHome from '@utils/constructors/construPageHome';
 import construFooterData from '@utils/constructors/construFooterData';
+import construRealisation from '@utils/constructors/construRealisation';
 import fetchPageData from '@utils/fetchs/fetchPageData';
 import fetchData from '@utils/fetchs/fetchData';
+import fetchAllRealisations from '@utils/fetchs/fetchAllRealisations';
 
 type Props = {
 	metadata: Metadata;
 	strings: Strings;
 	uploads: Upload[];
-	realisations: Upload[];
+	realisations: Realisation[];
 	footerData: FooterData;
 };
 
@@ -42,20 +45,29 @@ export default function Home(props: Props) {
 }
 
 export async function getStaticProps() {
-	const [page, footer, contact] = await Promise.all([
+	const [page, realisations, footer, contact] = await Promise.all([
 		fetchPageData('home'),
+		fetchAllRealisations(),
 		fetchData('footer'),
 		fetchData('contact'),
 	]);
 	const pageData = construPageHome(page);
 	const footerData = construFooterData(footer, contact);
+	let realisationsData: Realisation[] = [];
+
+	for (let i = 0; i < 6; i++) {
+		realisationsData.push(
+			construRealisation(realisations?.data?.attributes?.content[i])
+		);
+	}
+	console.log(realisationsData);
 
 	return {
 		props: {
 			metadata: pageData.metadata,
 			strings: pageData.strings,
 			uploads: pageData.uploads,
-			realisations: pageData.realisations,
+			realisations: realisationsData,
 			footerData: {
 				details: footerData.details,
 				contact: footerData.contact,

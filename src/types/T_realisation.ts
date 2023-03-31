@@ -17,18 +17,12 @@ type Realisation = {
 };
 
 type StrapiPayload = {
-	data: {
-		attributes: {
-			content: {
-				pid: number;
-				name: string;
-				typeText: string;
-				technicText: string;
-				layout: Layout;
-				images: { data: UploadFromStrapi[] };
-			}[];
-		};
-	};
+	pid: number;
+	name: string;
+	typeText: string;
+	technicText: string;
+	layout: Layout;
+	images: { data: UploadFromStrapi[] };
 };
 
 export type { Realisation, StrapiPayload, Layout };

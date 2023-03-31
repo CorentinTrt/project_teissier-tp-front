@@ -6,11 +6,12 @@ import Realisations from '@blocs/Realisations';
 
 import { Strings } from '@c_types/T_pageHomeData';
 import { Upload } from '@c_types/T_generics';
+import { Realisation } from '@c_types/T_realisation';
 
 type Props = {
 	strings: Strings;
 	uploads: Upload[];
-	realisations: Upload[];
+	realisations: Realisation[];
 };
 
 const defaultProps: Props = {
