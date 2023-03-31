@@ -60,7 +60,6 @@ export async function getStaticProps() {
 			construRealisation(realisations?.data?.attributes?.content[i])
 		);
 	}
-	console.log(realisationsData);
 
 	return {
 		props: {
