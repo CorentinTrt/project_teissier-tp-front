@@ -8,7 +8,7 @@ type Props = {
 };
 
 const defaultProps: Props = {
-	details: { shotText: 'Teissier TP', location: 'Cavaillon' },
+	details: { shotText: 'Teissier TP', location: 'Cavaillon (83)' },
 	contact: { cellNumber: '', homeNumber: '', emailAdress: '' },
 };
 
