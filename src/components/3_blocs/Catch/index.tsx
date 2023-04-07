@@ -17,7 +17,7 @@ const Catch = (props: Props) => {
 			<div className={s['left']}>
 				<h1>{strings.heading_1}</h1>
 
-				<Button size='big' label='Parlons-en' />
+				<Button size='big' label='Parlons-en' type='link' href='/contact' />
 			</div>
 			<div className={s['right']}>
 				{imgData && <img src={imgData.url} alt={imgData.alternativeText} />}

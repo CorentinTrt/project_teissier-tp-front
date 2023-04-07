@@ -13,7 +13,7 @@ const Header = () => {
 			<div className={s['right']}>
 				<a href={'#expertise'}>{'Expertise'}</a>
 				<a href={'#realisation'}>{'Réalisations'}</a>
-				<Button size='big' label='Contactez-nous' />
+				<Button size='big' label='Contactez-nous' type='link' href='/contact' />
 			</div>
 		</div>
 	);
