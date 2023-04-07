@@ -1,0 +1,85 @@
+.contact {
+	padding: 20px;
+	background-color: V.$c-grey-light;
+
+	h2 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.content {
+		@include M.on-desktop {
+			@include M.flex-centered-centered;
+		}
+
+		.left {
+			margin-bottom: 10px;
+			padding: 24px 20px;
+			background-color: V.$c-white;
+
+			@include M.on-desktop {
+				width: 50%;
+				min-height: 650px;
+				margin-bottom: 0;
+			}
+
+			input,
+			textarea {
+				margin-bottom: 24px;
+			}
+		}
+
+		.right {
+			width: 100%;
+			padding: 60px 24px;
+			background-color: V.$c-blue;
+
+			@include M.on-desktop {
+				width: 50%;
+				height: 650px;
+				min-height: 650px;
+			}
+
+			.logo {
+				margin-bottom: 34px;
+			}
+
+			.contact-img {
+				width: 100%;
+				margin-bottom: 34px;
+			}
+
+			.infos {
+				@include M.flex-column-centered-centered;
+
+				align-items: flex-start;
+				gap: 24px;
+
+				p {
+					color: V.$c-white;
+				}
+
+				.numbers {
+					@include M.flex-centered-centered;
+
+					justify-content: flex-start;
+					gap: 13px;
+				}
+
+				.location {
+					@include M.flex-centered-centered;
+
+					justify-content: flex-start;
+					gap: 13px;
+				}
+
+				.email-adress {
+					@include M.flex-centered-centered;
+
+					justify-content: flex-start;
+					gap: 13px;
+				}
+			}
+		}
+	}
+}
