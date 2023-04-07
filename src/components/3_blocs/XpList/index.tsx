@@ -24,7 +24,7 @@ const XpList = (props: Props) => {
 
 				<p className={s['text-xp']}>{strings.textXp}</p>
 
-				<Button size='big' label='Contactez-nous' />
+				<Button size='big' label='Contactez-nous' type='link' href='/contact' />
 			</div>
 
 			<div className={s['right']}>
