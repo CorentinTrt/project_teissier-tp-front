@@ -1,24 +1,26 @@
+import { FormEvent } from 'react';
 import s from './contact.module.scss';
 
 import Button from '@shared/Button/Button';
 import Input from '@shared/Input';
 
 import { Contact, FooterDetails } from '@c_types/T_footerData';
-import { FormEvent } from 'react';
+import { Strings } from '@c_types/T_pageContactData';
 
-type Props = { details: FooterDetails; contact: Contact };
+type Props = { strings: Strings; details: FooterDetails; contact: Contact };
 
 interface FormData {
 	[key: string]: FormDataEntryValue;
 }
 
 const defaultProps: Props = {
+	strings: { heading_1: 'Contactez-nous' },
 	details: { shotText: '', location: 'Cavaillon (83)' },
 	contact: { cellNumber: '', homeNumber: '', emailAdress: '' },
 };
 
 const ContactPage = (props: Props) => {
-	const { details, contact } = props;
+	const { strings, details, contact } = props;
 	const { location } = details;
 	const { cellNumber, homeNumber, emailAdress } = contact;
 
@@ -37,7 +39,7 @@ const ContactPage = (props: Props) => {
 
 	return (
 		<div className={s['contact']}>
-			<h2>{'Contactez-nous'}</h2>
+			<h2>{strings.heading_1}</h2>
 
 			<div className={s['content']}>
 				<div className={s['left']}>
