@@ -7,6 +7,12 @@
 		@include M.flex-centered-centered;
 	}
 
+	.full {
+		width: 100%;
+		padding: 21px 0 21px 100px;
+		background-color: V.$c-grey-dark;
+	}
+
 	.left {
 		@include M.flex-column-centered-centered;
 
