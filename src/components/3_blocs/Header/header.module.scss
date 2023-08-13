@@ -12,6 +12,10 @@
 		padding: 0 80px;
 	}
 
+	img {
+		height: 1.3rem;
+	}
+
 	.right {
 		@include M.flex-centered-centered;
 

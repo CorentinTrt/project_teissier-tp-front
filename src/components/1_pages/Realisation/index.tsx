@@ -99,7 +99,7 @@ const RealisationPage = (props: Props) => {
 				<div className={s['prev']}>
 					{state_step !== 1 && (
 						<ActiveLink href={`/realisations/${state_step + 1}`}>
-							<img src={'/icons/arrow_prev.png'} alt={'Projet précédent'} />
+							<img className={s['arrow']} src={'/icons/arrow_prev.png'} alt={'Projet précédent'} />
 							<p>{'Projet précédent'}</p>
 						</ActiveLink>
 					)}
@@ -108,7 +108,7 @@ const RealisationPage = (props: Props) => {
 					{state_step !== 6 && (
 						<ActiveLink href={`/realisations/${state_step + 1}`}>
 							<p>{'Projet suivant'}</p>
-							<img src={'/icons/arrow_next.png'} alt={'Projet suivant'} />
+							<img className={s['arrow']} src={'/icons/arrow_next.png'} alt={'Projet suivant'} />
 						</ActiveLink>
 					)}
 				</div>

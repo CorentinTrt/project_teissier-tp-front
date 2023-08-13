@@ -114,6 +114,10 @@ $cross-size: 30%;
 			@include M.flex-centered-centered;
 
 			gap: 23px;
+
+			.arrow {
+				height: 0.6rem;
+			}
 		}
 	}
 }
