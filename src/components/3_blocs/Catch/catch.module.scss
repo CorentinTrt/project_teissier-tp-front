@@ -1,38 +1,77 @@
 .catch {
-	@include M.flex-centered-centered;
+  @include M.flex-centered-centered;
 
-	justify-content: space-between;
-	padding: 32px 20px;
-	background-color: V.$c-grey-light;
+  justify-content: space-between;
+  padding: 32px 20px;
+  background-color: V.$c-grey-light;
 
-	@include M.on-desktop {
-		height: 540px;
-		padding: 0 80px 0 132px;
-	}
+  @include M.on-desktop {
+    height: 540px;
+    padding: 0 80px 0 132px;
+  }
 
-	.left {
-		@include M.on-desktop {
-			width: 40%;
+  .left {
 
-			h1 {
-				margin-bottom: 32px;
-			}
-		}
-	}
+    &_heading {
+      margin-bottom: 12px;
 
-	.right {
-		display: none;
-		width: 50%;
-		height: 100%;
+      .animation {
+        position: relative;
+        overflow: hidden;
+        height: 3rem;
+        white-space: nowrap;
 
-		@include M.on-desktop {
-			display: block;
-		}
+        &_moving {
+          position: absolute;
+          top: -60px;
+          left: 0;
+          color: V.$c-blue;
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
+          animation: move-vertically 8s infinite;
+        }
+      }
+    }
+
+    @include M.on-desktop {
+      width: 40%;
+
+      &_heading {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  .right {
+    display: none;
+    width: 50%;
+    height: 100%;
+
+    @include M.on-desktop {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@keyframes move-vertically {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -60px;
+  }
+  50% {
+    top: -120px;
+  }
+  75% {
+    top: -60px;
+  }
+  100% {
+    top: 0;
+  }
 }

@@ -13,6 +13,7 @@
 		"build": "next build",
 		"start": "next start -p 80",
 		"//": "-- CKECKS --",
+		"check": "yarn prettier yarn lint yarn lint::scss",
 		"prettier": "prettier --write .",
 		"lint": "next lint",
 		"lint::scss": "stylelint \"**/*.scss\"",
