@@ -4,35 +4,42 @@ import Catch from '@blocs/Catch';
 import XpList from '@blocs/XpList';
 import Realisations from '@blocs/Realisations';
 
-import {Strings} from '@c_types/T_pageHomeData';
-import {Upload} from '@c_types/T_generics';
-import {Realisation} from '@c_types/T_realisation';
+import { Strings } from '@c_types/T_pageHomeData';
+import { Upload } from '@c_types/T_generics';
+import { Realisation } from '@c_types/T_realisation';
 
 type Props = {
-    strings: Strings;
-    uploads: Upload[];
-    realisations: Realisation[];
+	strings: Strings;
+	uploads: Upload[];
+	realisations: Realisation[];
 };
 
 const defaultProps: Props = {
-    strings: {heading_1: '', heading_2: '', heading_3: '', textXp: '', servicesAnimHeading: []},
-    uploads: [{id: '', url: '', alternativeText: '', name: ''}],
-    realisations: [],
+	strings: {
+		heading_1: '',
+		heading_2: '',
+		heading_3: '',
+		textXp: '',
+		servicesAnimHeading: [],
+	},
+	uploads: [{ id: '', url: '', alternativeText: '', name: '' }],
+	realisations: [],
 };
 
 const HomePage = (props: Props) => {
-    const {strings, uploads, realisations} = props;
-    const {heading_1, heading_2, heading_3, textXp, servicesAnimHeading} = strings;
+	const { strings, uploads, realisations } = props;
+	const { heading_1, heading_2, heading_3, textXp, servicesAnimHeading } =
+		strings;
 
-    return (
-        <div className={s['home']}>
-            <Catch strings={strings} imgData={uploads[0]}/>
+	return (
+		<div className={s['home']}>
+			<Catch strings={strings} imgData={uploads[0]} />
 
-            <XpList strings={strings}/>
+			<XpList strings={strings} />
 
-            <Realisations strings={strings} realList={realisations}/>
-        </div>
-    );
+			<Realisations strings={strings} realList={realisations} />
+		</div>
+	);
 };
 
 export default HomePage;
