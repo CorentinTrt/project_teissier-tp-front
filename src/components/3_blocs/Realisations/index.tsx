@@ -9,7 +9,7 @@ import { Realisation } from '@c_types/T_realisation';
 import ActiveLink from '@shared/ActiveLink';
 
 type Props = {
-	strings: { [key: string]: string };
+	strings: { heading_3: string };
 	realList: Realisation[];
 };
 

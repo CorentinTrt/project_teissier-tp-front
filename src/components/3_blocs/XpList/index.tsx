@@ -4,7 +4,7 @@ import Button from '@shared/Button/Button';
 import ThumbXp from '@shared/ThumbXp';
 
 type Props = {
-	strings: { [key: string]: string };
+	strings: { heading_2: string, textXp: string };
 };
 
 const XpList = (props: Props) => {
