@@ -5,7 +5,7 @@ import s from './button.module.scss';
 type ButtonType = 'submit' | 'link';
 
 type Props = {
-	size: 'small' | 'big';
+	size: 'small' | 'big' | 'full';
 	label: string;
 	type: ButtonType;
 	href?: string;
@@ -38,7 +38,7 @@ const Button = (props: Props) => {
 
 	const buttonType = type === 'submit' ? 'submit' : 'button';
 	const classesContainer = `${s['button']} ${
-		size === 'small' ? s['small'] : ''
+		size === 'small' ? s['small'] : size === 'full' ? s['full'] : ''
 	}`;
 	const classesLabel = `${s['label']} ${size === 'small' ? s['small'] : ''}`;
 

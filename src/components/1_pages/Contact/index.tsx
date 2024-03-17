@@ -39,20 +39,39 @@ const ContactPage = (props: Props) => {
 
 	return (
 		<div className={s['contact']}>
-			<h2>{strings.heading_1}</h2>
+			<h1>{strings.heading_1}</h1>
 
 			<div className={s['content']}>
 				<div className={s['left']}>
 					<form onSubmit={handleSubmit}>
-						<Input label={'Nom et Prénom'} name={'names'} />
+						<Input
+							label={'Nom et Prénom'}
+							name={'names'}
+							placeholder={'Jean Pagnol'}
+						/>
 
-						<Input label={'Email'} name={'email'} type={'email'} />
+						<Input
+							label={'Email'}
+							name={'email'}
+							type={'email'}
+							placeholder={'jean.pagnol@provence.com'}
+						/>
 
-						<Input label={'Téléphone'} name={'tel'} type={'number'} />
+						<Input
+							label={'Téléphone'}
+							name={'tel'}
+							type={'number'}
+							placeholder={'0684848484'}
+						/>
 
-						<Input label={'Message'} name={'message'} type={'text-area'} />
+						<Input
+							label={'Message'}
+							name={'message'}
+							type={'text-area'}
+							placeholder={'Comment pouvons-nous vous aider?'}
+						/>
 
-						<Button type={'submit'} label={'Envoyer'} />
+						<Button size={'full'} type={'submit'} label={'Envoyer'} />
 					</form>
 				</div>
 

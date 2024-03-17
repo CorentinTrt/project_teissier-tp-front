@@ -2,12 +2,15 @@
 	input,
 	textarea {
 		width: 100%;
-		max-width: 400px;
 		padding: 16px;
 		border-width: 1px;
 		border-style: solid;
 		border-radius: 0;
 		border-color: V.$c-blue-light;
+	}
+
+	input {
+		max-width: 400px;
 	}
 
 	textarea {

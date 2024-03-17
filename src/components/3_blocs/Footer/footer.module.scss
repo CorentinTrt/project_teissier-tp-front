@@ -9,8 +9,12 @@
 
 	.full {
 		width: 100%;
-		padding: 21px 0 21px 100px;
+		padding: 21px 0 21px 20px;
 		background-color: V.$c-grey-dark;
+
+		img {
+			height: 1.3rem;
+		}
 	}
 
 	.left {

@@ -54,7 +54,7 @@ const RealisationPage = (props: Props) => {
 	return (
 		<div className={s['realisation']}>
 			<div className={s['header']}>
-				<h2>{strings.heading_1}</h2>
+				<h1>{strings.heading_1}</h1>
 
 				<ActiveLink href={'/'}>
 					<div className={s['header--cross']}></div>
@@ -99,16 +99,24 @@ const RealisationPage = (props: Props) => {
 				<div className={s['prev']}>
 					{state_step !== 1 && (
 						<ActiveLink href={`/realisations/${state_step + 1}`}>
-							<img className={s['arrow']} src={'/icons/arrow_prev.png'} alt={'Projet précédent'} />
-							<p>{'Projet précédent'}</p>
+							<img
+								className={s['arrow']}
+								src={'/icons/arrow_prev.png'}
+								alt={'Projet précédent'}
+							/>
+							<p className={s['label']}>{'Projet précédent'}</p>
 						</ActiveLink>
 					)}
 				</div>
 				<div className={s['next']}>
 					{state_step !== 6 && (
 						<ActiveLink href={`/realisations/${state_step + 1}`}>
-							<p>{'Projet suivant'}</p>
-							<img className={s['arrow']} src={'/icons/arrow_next.png'} alt={'Projet suivant'} />
+							<p className={s['label']}>{'Projet suivant'}</p>
+							<img
+								className={s['arrow']}
+								src={'/icons/arrow_next.png'}
+								alt={'Projet suivant'}
+							/>
 						</ActiveLink>
 					)}
 				</div>

@@ -81,7 +81,7 @@ $cross-size: 30%;
 		.right {
 			width: 100%;
 			margin-bottom: 16px;
-			padding: 24px;
+			padding: 3rem;
 			background-color: V.$c-white;
 
 			h2 {
@@ -114,9 +114,19 @@ $cross-size: 30%;
 			@include M.flex-centered-centered;
 
 			gap: 23px;
+			transition: scale 0.2s ease-in;
 
 			.arrow {
 				height: 0.6rem;
+			}
+
+			.label {
+				@include T.body-l;
+			}
+
+			&:hover {
+				scale: 1.025;
+				transition: scale 0.2s ease-out;
 			}
 		}
 	}

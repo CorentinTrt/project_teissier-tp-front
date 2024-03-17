@@ -8,6 +8,10 @@
 	cursor: pointer;
 	user-select: none;
 
+	&.full {
+		width: 100%;
+	}
+
 	&:hover {
 		transition: background-color 0.3s ease-in;
 		background-color: V.$c-blue-strong;
