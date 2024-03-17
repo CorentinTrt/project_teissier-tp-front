@@ -39,10 +39,9 @@ COPY --from=builder --chown=nextuser:nextgroup /app/.next/static ./.next/static
 
 USER nextuser
 
-EXPOSE 80
 EXPOSE 443
 
-ENV PORT 80
+ENV PORT 443
 
 CMD ["node", "server.js"]
 
