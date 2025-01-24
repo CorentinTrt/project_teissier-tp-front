@@ -28,8 +28,6 @@ const defaultProps: Props = {
 
 const HomePage = (props: Props) => {
 	const { strings, uploads, realisations } = props;
-	const { heading_1, heading_2, heading_3, textXp, servicesAnimHeading } =
-		strings;
 
 	return (
 		<div className={s['home']}>

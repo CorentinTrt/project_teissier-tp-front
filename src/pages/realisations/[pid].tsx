@@ -1,7 +1,7 @@
 import RealisationPage from '@pages/Realisation';
 import Metas from '@sections/Metas';
 
-import fetechRealisation from '@utils/fetchs/fetchRealisation';
+import fetchRealisation from '@utils/fetchs/fetchRealisation';
 import fetchPageData from '@utils/fetchs/fetchPageData';
 import construPageRealisations from '@utils/constructors/construPageRealisations';
 import construRealisation from '@utils/constructors/construRealisation';
@@ -51,13 +51,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 		const [page, realisation] = await Promise.all([
 			fetchPageData('realisation'),
-			fetechRealisation(pid),
+			fetchRealisation(pid),
 		]);
 
 		const pageData = construPageRealisations(page);
-		const realisationData = construRealisation(
-			realisation?.data?.attributes?.content[0]
-		);
+		const realisationData = construRealisation(realisation?.data?.content[0]);
 
 		return {
 			props: {

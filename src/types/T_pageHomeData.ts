@@ -10,15 +10,13 @@ type Strings = {
 
 type StrapiPayload = {
 	data: {
-		attributes: {
-			metadata: Metadata;
-			strings: Strings;
-			uploads: {
-				data: UploadFromStrapi[];
-			};
-			realisations: {
-				data: UploadFromStrapi[];
-			};
+		metadata: Metadata;
+		strings: Strings;
+		uploads: {
+			data: UploadFromStrapi[];
+		};
+		realisations: {
+			data: UploadFromStrapi[];
 		};
 	};
 };

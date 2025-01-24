@@ -51,14 +51,13 @@ export async function getStaticProps() {
 		fetchData('footer'),
 		fetchData('contact'),
 	]);
+
 	const pageData = construPageHome(page);
 	const footerData = construFooterData(footer, contact);
-	let realisationsData: Realisation[] = [];
+	const realisationsData: Realisation[] = [];
 
 	for (let i = 0; i < 6; i++) {
-		realisationsData.push(
-			construRealisation(realisations?.data?.attributes?.content[i])
-		);
+		realisationsData.push(construRealisation(realisations?.data?.content[i]));
 	}
 
 	return {

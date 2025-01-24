@@ -1,9 +1,6 @@
 import { Upload, UploadFromStrapi } from '@c_types/T_generics';
 import { Realisation, StrapiPayload } from '@c_types/T_realisation';
 
-const strapiHost = process.env.STRAPI_HOST;
-const strapiPort = process.env.STRAPI_PORT;
-
 function formateUploadsSrc(upload: UploadFromStrapi): Upload {
 	const formatedUpload: Upload = {
 		id: '',
@@ -12,14 +9,14 @@ function formateUploadsSrc(upload: UploadFromStrapi): Upload {
 		url: '',
 	};
 
-	if (upload?.attributes?.url) {
-		formatedUpload.url = `http://${strapiHost}:${strapiPort}${upload?.attributes?.url}`;
+	if (upload?.url) {
+		formatedUpload.url = `${upload?.url}`;
 	}
-	if (upload?.attributes?.name) {
-		formatedUpload.name = upload?.attributes?.name;
+	if (upload?.name) {
+		formatedUpload.name = upload?.name;
 	}
-	if (upload?.attributes?.alternativeText) {
-		formatedUpload.alternativeText = upload?.attributes?.alternativeText;
+	if (upload?.alternativeText) {
+		formatedUpload.alternativeText = upload?.alternativeText;
 	}
 
 	return formatedUpload;
@@ -30,26 +27,28 @@ export default function construRealisation(
 ): Realisation {
 	let formatedImages: Upload[] = [];
 
-	const uploads = payload?.images?.data;
+	const { pid, layout, name, typeText, technicText } = payload;
+
+	const uploads = payload?.images;
 	if (uploads && Array.isArray(uploads)) {
 		formatedImages = uploads.map((e: UploadFromStrapi) => formateUploadsSrc(e));
 
 		return {
-			pid: payload.pid,
-			name: payload.name,
-			typeText: payload.typeText,
-			technicText: payload.technicText,
-			layout: payload.layout,
+			pid: pid ? pid : 0,
+			layout: layout ? layout : 0,
+			name: name ? name : '',
+			typeText: typeText ? typeText : '',
+			technicText: technicText ? technicText : '',
 			images: formatedImages,
 		};
 	}
 
 	return {
-		pid: 0,
-		layout: 0,
-		name: '',
-		typeText: '',
-		technicText: '',
+		pid: pid ? pid : 0,
+		layout: layout ? layout : 0,
+		name: name ? name : '',
+		typeText: typeText ? typeText : '',
+		technicText: technicText ? technicText : '',
 		images: [],
 	};
 }

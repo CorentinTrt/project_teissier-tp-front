@@ -4,9 +4,9 @@ interface Contact {
 	emailAdress: string;
 }
 interface ContactPayload {
-	cell_number: string;
-	home_number: string;
-	email_adress: string;
+	cellNumber: string;
+	homeNumber: string;
+	emailAddress: string;
 }
 
 interface FooterDetails {
@@ -14,7 +14,7 @@ interface FooterDetails {
 	location: string;
 }
 interface FooterDetailsPayload {
-	short_text: string;
+	shortText: string;
 	location: string;
 }
 
@@ -25,9 +25,7 @@ type FooterData = {
 
 type StrapiPayload = {
 	data: {
-		attributes: {
-			content: ContactPayload | FooterDetailsPayload;
-		};
+		content: ContactPayload | FooterDetailsPayload;
 	};
 };
 

@@ -11,11 +11,9 @@ interface Upload {
 }
 interface UploadFromStrapi {
 	id: string;
-	attributes: {
-		name: string;
-		alternativeText: string;
-		url: string;
-	};
+	name: string;
+	alternativeText: string;
+	url: string;
 }
 
 export type { Metadata, Upload, UploadFromStrapi };

@@ -6,10 +6,8 @@ interface Strings {
 
 type StrapiPayload = {
 	data: {
-		attributes: {
-			metadata: Metadata;
-			strings: Strings;
-		};
+		metadata: Metadata;
+		strings: Strings;
 	};
 };
 

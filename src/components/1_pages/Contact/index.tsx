@@ -33,8 +33,6 @@ const ContactPage = (props: Props) => {
 		_formData.forEach((value, property: string) => {
 			formData[property] = value;
 		});
-
-		console.log(formData);
 	}
 
 	return (

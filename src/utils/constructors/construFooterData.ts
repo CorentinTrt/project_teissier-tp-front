@@ -14,7 +14,7 @@ function isFooterDetails(object: unknown): object is FooterDetailsPayload {
 
 function isContact(object: unknown): object is ContactPayload {
 	if (object !== null && typeof object === 'object') {
-		return 'email_adress' in object;
+		return 'emailAddress' in object;
 	}
 	return false;
 }
@@ -23,19 +23,19 @@ export default function construFooterData(
 	payloadDetails: StrapiPayload,
 	payloadContact: StrapiPayload
 ): FooterData {
-	const details: unknown = payloadDetails?.data?.attributes?.content;
-	const contact: unknown = payloadContact?.data?.attributes?.content;
+	const details: unknown = payloadDetails?.data?.content;
+	const contact: unknown = payloadContact?.data?.content;
 
 	if (isFooterDetails(details) && isContact(contact)) {
 		return {
 			details: {
-				shotText: details.short_text,
+				shotText: details.shortText,
 				location: details.location,
 			},
 			contact: {
-				cellNumber: contact.cell_number,
-				homeNumber: contact.home_number,
-				emailAdress: contact.email_adress,
+				cellNumber: contact.cellNumber,
+				homeNumber: contact.homeNumber,
+				emailAdress: contact.emailAddress,
 			},
 		};
 	}
