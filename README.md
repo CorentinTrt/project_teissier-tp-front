@@ -1,16 +1,21 @@
 # Teissier TP - Next App
 
-## Run the project
+## Usages
 
-#### Development
+```shell
+$ yarn dev
+# to run the project in development mode
+```
 
-- `$ yarn docker-dev`
-  -> That will run a docker-compose script and enable hot-reload
+```shell
+$ yarn build
+# to build the application
+```
 
-#### Production
-
-- `$ yarn docker-prod`
-  -> That will create a standalone build runnable through Docker
+```shell
+$ yarn build-docker
+# to build a docker image of the project
+```
 
 ## Linting & formating
 
@@ -21,3 +26,7 @@
 
 - We are using pre-commit hooks to unsure the respect of linting & formatting rules
 - Make sure to have Husky installed (automatic) and running when you make a commit
+
+## Deployment
+
+This project is deployed with Cloud Run and Cloud Build. A build is triggered on a push on the `main` branch.
