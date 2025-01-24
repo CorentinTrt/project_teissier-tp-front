@@ -26,6 +26,7 @@ type Props = {
 export default function Home(props: Props) {
 	const { metadata, strings, uploads, realisations, footerData } = props;
 	const { details, contact } = footerData;
+	console.log('--------- STRAPI_URL -----------', process.env.STRAPI_URL);
 
 	return (
 		<>

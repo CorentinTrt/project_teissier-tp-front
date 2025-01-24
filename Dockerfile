@@ -19,6 +19,9 @@ COPY --from=deps /app/node_modules ./node_modules
 
 COPY . .
 
+ARG STRAPI_URL
+ENV STRAPI_URL=${STRAPI_URL}
+
 RUN yarn build
 
 # Production image, copy all the files and run next
@@ -26,7 +29,7 @@ FROM node:18-alpine AS runner
 
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 RUN addgroup --system --gid 1001 nextgroup
 RUN adduser --system --uid 1001 nextuser
@@ -38,10 +41,6 @@ COPY --from=builder --chown=nextuser:nextgroup /app/.next/standalone ./
 COPY --from=builder --chown=nextuser:nextgroup /app/.next/static ./.next/static
 
 USER nextuser
-
-EXPOSE 443
-
-ENV PORT 443
 
 CMD ["node", "server.js"]
 
